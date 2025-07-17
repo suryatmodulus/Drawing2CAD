@@ -30,9 +30,7 @@ Download data from [here](https://drive.google.com/drive/folders/1t9uO2iFh1eVDXR
   ```python
   import cairosvg
   
-  cairosvg.svg2png(url=svg_path, write_to=png_path, 
-  				 output_width=224, output_height=224, 
-                   background_color='white')
+  cairosvg.svg2png(url=svg_path, write_to=png_path, output_width=224, output_height=224, background_color='white')
   ```
 
 - `svg_vec` contains vectorized representations of SVG drawing sequences. Each file stores the stacked drawing sequences for the four views (`Front`, `Top`, `Right`, and `FrontTopRight`), saved in `.npy` format to enable fast data loading.
