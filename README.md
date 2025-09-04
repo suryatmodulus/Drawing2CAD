@@ -1,16 +1,42 @@
-# Drawing2CAD
+<div align="center">
 
-This repository provides implementation code for our paper:
+# Drawing2CAD: Sequence-to-Sequence Learning for CAD Generation from Vector Drawings
 
-**Drawing2CAD: Sequence-to-Sequence Learning for CAD Generation from Vector Drawings**
+<h4>
+  <a href='https://scholar.google.com/citations?user=2Y06Jo4AAAAJ&hl=zh-CN' target='_blank'>Feiwei Qin</a><sup>1*</sup>
+  ·
+  <a href='' target='_blank'>Shichao Lu</a><sup>1*</sup>
+  ·
+  <a href='https://scholar.google.com/citations?user=IZbQymsAAAAJ&hl' target='_blank'>Junhao Hou</a><sup>2*</sup>
+  ·
+  <a href='https://scholar.google.com/citations?user=47KhMXEAAAAJ&hl' target='_blank'>Changmiao Wang</a><sup>3</sup>
+  ·
+  <a href='https://scholar.google.com/citations?user=Se20XL0AAAAJ&hl' target='_blank'>Meie Fang</a><sup>4†</sup>
+  ·
+  <a href='https://scholar.google.com/citations?user=1U9U_cYAAAAJ&hl' target='_blank'>Ligang Liu</a><sup>5†</sup>
+</h4>
 
-[Feiwei Qin](https://scholar.google.com/citations?user=2Y06Jo4AAAAJ&hl=zh-CN), Shichao Lu, [Junhao Hou](https://scholar.google.com/citations?user=IZbQymsAAAAJ&hl=en), [Changmiao Wang](https://scholar.google.com/citations?user=47KhMXEAAAAJ&hl=zh-CN), [Meie Fang](https://scholar.google.com/citations?user=Se20XL0AAAAJ&hl=en), [Ligang Liu](https://scholar.google.com/citations?user=1U9U_cYAAAAJ&hl=zh-CN)
+<h5>
+  <sup>1</sup>Hangzhou Dianzi University  <sup>2</sup>Zhejiang University  <sup>3</sup>Shenzhen Research Institute of Big Data  <br><sup>4</sup>Guangzhou University  <sup>5</sup>University of Science and Technology of China
+</h5>
 
-**ACM Multimedia 2025** (camera-ready version coming soon)
+<h4>
+  ACM Multimedia 2025
+</h4>
 
-![teaser](./teaser.png)
+<h5>
+  *These authors contributed equally to this work.
+</h5>
 
-## Dependencies
+[![arXiv](https://img.shields.io/badge/arXiv-Drawing2CAD-b31b1b?logo=arxiv&logoColor=b31b1b)](https://arxiv.org/abs/2508.18733)
+[![Conference](https://img.shields.io/badge/ACM%20MM-2025-4b44ce)]()
+[![Google Drive](https://img.shields.io/badge/Drive-Dataset-4285F4?logo=googledrive&logoColor=fff)](https://drive.google.com/drive/folders/1t9uO2iFh1eVDXRCKUEonKPBu8WGYA8wU?usp=sharing)
+
+<img src="assets/teaser.png">
+
+</div>
+
+## 🐍 Installation
 
 - Python 3.9
 - Cuda 11.8+
@@ -21,7 +47,7 @@ Install python package dependencies through pip:
 pip install -r requirements.txt
 ```
 
-## Dataset
+## 📥 Dataset
 
 Download data from [here](https://drive.google.com/drive/folders/1t9uO2iFh1eVDXRCKUEonKPBu8WGYA8wU?usp=sharing) and extract them under `data` folder.
 
@@ -37,7 +63,7 @@ Download data from [here](https://drive.google.com/drive/folders/1t9uO2iFh1eVDXR
 
 - `cad_vec` contains our vectorized representation for CAD sequences, saved in `.h5` format to enable fast data loading.
 
-## Training
+## 🚀 Training
 
 To train the model in different input options:
 
@@ -47,7 +73,7 @@ python train.py --input_option {1x, 3x, 4x} --exp_name your_exp_name
 
 Since different input options lead to different models, it is recommended to specify the experiment name using `--exp_name` for each run. For more configurable parameters and options, please refer to `config/config.py`.
 
-## Testing and Evaluation
+## 📍 Evaluation
 
 After training the model, run the model to inference all test data:
 
@@ -57,6 +83,23 @@ python test.py --input_option {1x, 3x, 4x} --exp_name your_exp_name
 
 After inference, the final results will be saved under `proj/your_exp_name/test_results`. To evaluate the model inference results and to export and visualize the final CAD models, please refer to the code from [DeepCAD](https://github.com/ChrisWu1997/DeepCAD).
 
+## 🌹 Acknowledgement
+
+This repository builds upon the following awesome datasets and projects:
+
+- [DeepCAD](https://github.com/ChrisWu1997/DeepCAD)
+- [FreeCAD](https://github.com/FreeCAD/FreeCAD)
+- [CairoSVG](https://cairosvg.org/)
+
 ## Cite
 
-coming soon.
+If you find this project useful for your research, please use the following BibTeX entry.
+
+```
+@article{qin2025drawing2cad,
+  title={Drawing2CAD: Sequence-to-Sequence Learning for CAD Generation from Vectorized Drawings},
+  author={Qin, Feiwei and Lu, Shichao and Hou, Junhao and Wang, Changmiao and Fang, Meie and Liu, Ligang},
+  journal={arXiv preprint arXiv:2508.18733},
+  year={2025}
+}
+```
